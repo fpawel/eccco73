@@ -1,10 +1,10 @@
 package main
 
 import (
-		"github.com/lxn/walk"
+	"github.com/lxn/walk"
 	. "github.com/lxn/walk/declarative"
+	"log"
 	"sync/atomic"
-			"log"
 )
 
 const (
