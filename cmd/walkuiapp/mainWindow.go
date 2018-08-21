@@ -4,28 +4,28 @@ import (
 	"github.com/lxn/walk"
 
 	"fmt"
-		"log"
 	"github.com/fpawel/eccco73"
+	"log"
 )
 
 type AppMainWindow struct {
 	*walk.MainWindow
-	app                *App
-	tblProducts        *walk.TableView
-	tblWorks           *walk.TableView
-	btnCancel          *walk.PushButton
-	btnCancelDelay     *walk.PushButton
+	app                    *App
+	tblProducts            *walk.TableView
+	tblWorks               *walk.TableView
+	btnCancel              *walk.PushButton
+	btnCancelDelay         *walk.PushButton
 	btnCloseClickedProduct *walk.ToolButton
-	actionDeleteParty  *walk.Action
-	svWork             *walk.ScrollView
-	lblWork            *walk.Label
-	lblWorkMessage     *walk.TextEdit
-	progressBar        *walk.ProgressBar
-	lblParty *walk.Label
-	tvParties          *walk.TreeView
-	ivChart      *walk.ImageView
-	clickedProduct eccco73.Product
-	initialized        bool
+	actionDeleteParty      *walk.Action
+	svWork                 *walk.ScrollView
+	lblWork                *walk.Label
+	lblWorkMessage         *walk.TextEdit
+	progressBar            *walk.ProgressBar
+	lblParty               *walk.Label
+	tvParties              *walk.TreeView
+	ivChart                *walk.ImageView
+	clickedProduct         eccco73.Product
+	initialized            bool
 }
 
 func NewAppMainWindow(app *App) *AppMainWindow {
@@ -65,7 +65,6 @@ func (x *AppMainWindow) TableProductsItemActivated() {
 		}
 	}
 }
-
 
 func (x *AppMainWindow) TreeViewPartiesItemActivated() {
 	switch n := x.tvParties.CurrentItem().(type) {

@@ -2,7 +2,7 @@ package main
 
 import "time"
 
-var monthNames  = []string{
+var monthNames = []string{
 	"",
 	"Январь",
 	"Февраль",

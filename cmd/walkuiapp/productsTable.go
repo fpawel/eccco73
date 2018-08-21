@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"github.com/lxn/walk"
 	"database/sql"
-	"strconv"
+	"fmt"
 	"github.com/fpawel/eccco73"
+	"github.com/lxn/walk"
+	"strconv"
 )
 
 type ProductsTableModel struct {
@@ -16,7 +16,7 @@ type ProductsTableModel struct {
 type productColumn int
 
 const (
-	colNum productColumn  = iota
+	colNum productColumn = iota
 	colProdType
 	colSerial
 	colFon20
@@ -43,10 +43,9 @@ const (
 	colCalcDNei
 
 	colNote
-
 )
 
-var productColumns = [colNote+1]string {
+var productColumns = [colNote + 1]string{
 	"№", "ИБЯЛ", "Зав.№",
 	"фон.20", "Ч.20", "Кч.20",
 	"фон.-20", "Ч.-20",
@@ -54,21 +53,19 @@ var productColumns = [colNote+1]string {
 
 	"D.фон", "D.T",
 
-	"ПГС1", "ПГС2", "ПГС3","ПГС2", "ПГС1",
+	"ПГС1", "ПГС2", "ПГС3", "ПГС2", "ПГС1",
 
 	"неизм.", "D.неи",
 
 	"Примечание",
 }
 
-
-
 func (x *ProductsTableModel) RowCount() int {
 	return len(x.app.products)
 }
 
 func (x *ProductsTableModel) Data(row, col int) (text string, image string, textColor, backgroundColor walk.Color,
-	applyTextColor, applyBackgroundColor bool, ) {
+	applyTextColor, applyBackgroundColor bool) {
 	p := x.app.products[row]
 	p2 := eccco73.Product2{
 		Product: p,
@@ -89,17 +86,16 @@ func (x *ProductsTableModel) Data(row, col int) (text string, image string, text
 		applyTextColor = true
 	}
 
-
 	switch productColumn(col) {
 	case colNum:
-		text =  fmt.Sprintf("%d.%d", p.Order / 8 + 1, p.Order % 8 + 1)
+		text = fmt.Sprintf("%d.%d", p.Order/8+1, p.Order%8+1)
 		if x.app.mw.clickedProduct.ProductID == p.ProductID {
 			image = "assets/png16/forward.png"
 			textColor = walk.RGB(0, 0, 255)
 			applyTextColor = true
 		} else {
 			if len(p.FlashBytes) > 0 {
-				image =  Png16Checkmark
+				image = Png16Checkmark
 			}
 		}
 
@@ -200,10 +196,9 @@ func (x *ProductsTableModel) StyleCell(c *walk.CellStyle) {
 		c.BackgroundColor = backgroundColor
 	}
 
-
 }
 
-func (x *ProductsTableModel) Value (row, col int) interface{}{
+func (x *ProductsTableModel) Value(row, col int) interface{} {
 	str, _, _, _, _, _ := x.Data(row, col)
 	return str
 }
@@ -222,15 +217,13 @@ func (x *ProductsTableModel) SetChecked(row int, checked bool) error {
 	return nil
 }
 
-
-
-func fmtNullFloat64(x sql.NullFloat64, prec int) string{
+func fmtNullFloat64(x sql.NullFloat64, prec int) string {
 	if !x.Valid {
 		return ""
 	}
-	return fmtFloat64(x.Float64, prec )
+	return fmtFloat64(x.Float64, prec)
 }
 
-func fmtFloat64(x float64, prec int) string{
+func fmtFloat64(x float64, prec int) string {
 	return strconv.FormatFloat(x, 'f', prec, 64)
 }

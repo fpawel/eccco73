@@ -6,6 +6,7 @@ import (
 
 	"database/sql"
 	"fmt"
+	"github.com/fpawel/eccco73"
 	"github.com/fpawel/eccco73/ui/dialogs/dialogEditParty"
 	"github.com/fpawel/eccco73/ui/dialogs/dialogEditProduct"
 	"github.com/fpawel/eccco73/ui/dialogs/dialogFindProduct"
@@ -13,7 +14,6 @@ import (
 	"github.com/lxn/win"
 	"log"
 	"time"
-	"github.com/fpawel/eccco73"
 )
 
 type App struct {

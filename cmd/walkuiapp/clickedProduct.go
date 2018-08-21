@@ -2,13 +2,10 @@ package main
 
 import (
 	"github.com/lxn/walk"
-	"log"
 	"image"
 	"image/color"
+	"log"
 )
-
-
-
 
 func (x *AppMainWindow) invalidateChart() {
 
@@ -23,7 +20,6 @@ func (x *AppMainWindow) invalidateChart() {
 	if height > 800 {
 		height = 800
 	}
-
 
 	if len(x.clickedProduct.FlashBytes) == 0 {
 		img := image.NewRGBA(image.Rect(0, 0, width, height))
@@ -42,7 +38,7 @@ func (x *AppMainWindow) invalidateChart() {
 	}
 }
 
-func (x *AppMainWindow) setChartBitmap(img image.Image){
+func (x *AppMainWindow) setChartBitmap(img image.Image) {
 	bitmap, err := walk.NewBitmapFromImage(img)
 	if err != nil {
 		log.Fatalln(err)
@@ -61,5 +57,3 @@ func (x *AppMainWindow) HideClickedProduct() {
 	x.ivChart.SetVisible(false)
 	x.app.mw.btnCloseClickedProduct.SetVisible(false)
 }
-
-

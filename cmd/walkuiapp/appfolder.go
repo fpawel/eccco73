@@ -1,17 +1,16 @@
 package main
 
 import (
-	"os"
-	"github.com/lxn/win"
-	"syscall"
-	"path/filepath"
-	"github.com/lxn/walk"
 	"fmt"
+	"github.com/lxn/walk"
+	"github.com/lxn/win"
+	"os"
+	"path/filepath"
+	"syscall"
 )
 
 const (
 	appName = "eccco73"
-
 )
 
 func appFolderPath() string {
@@ -24,8 +23,8 @@ func appFolderPath() string {
 		appDataPath = syscall.UTF16ToString(buf[0:])
 	}
 	appDataPath = filepath.Join(appDataPath, "Аналитприбор", appName)
-	_,err := os.Stat(appDataPath)
-	if err != nil{
+	_, err := os.Stat(appDataPath)
+	if err != nil {
 		if os.IsNotExist(err) { // создать каталог если его нет
 			os.Mkdir(appDataPath, os.ModePerm)
 		} else {
@@ -39,10 +38,9 @@ func appFolderFileName(filename string) string {
 	return filepath.Join(appFolderPath(), filename)
 }
 
-func  appConfigFileName() string{
+func appConfigFileName() string {
 	return filepath.Join(appFolderFileName("app.config"))
 }
-
 
 func setupWalkApplication(app *walk.Application) {
 
@@ -55,4 +53,3 @@ func setupWalkApplication(app *walk.Application) {
 	}
 	app.SetSettings(sets)
 }
-

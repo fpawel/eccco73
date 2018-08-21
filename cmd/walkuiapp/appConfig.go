@@ -1,24 +1,22 @@
 package main
 
 import (
-	"time"
+	"encoding/json"
 	"github.com/fpawel/guartutils/comport"
 	"github.com/fpawel/guartutils/fetch"
-	"io/ioutil"
 	"github.com/tarm/serial"
-	"encoding/json"
+	"io/ioutil"
+	"time"
 
-			"fmt"
+	"fmt"
 	"log"
 )
-
 
 type AppConfig struct {
 	PortProducts      comport.Config
 	UncheckedProducts map[byte]struct{}
 	FindProductSerial int64
 }
-
 
 func NewAppConfig() AppConfig {
 
@@ -29,7 +27,7 @@ func NewAppConfig() AppConfig {
 	}
 	r := AppConfig{
 		PortProducts: comport.Config{
-			Serial:portConfig9600,
+			Serial: portConfig9600,
 			Fetch: fetch.Config{
 				MaxAttemptsRead: 1,
 				ReadTimeout:     time.Second,
@@ -63,8 +61,3 @@ func (x AppConfig) Save() {
 		log.Panic(err)
 	}
 }
-
-
-
-
-
