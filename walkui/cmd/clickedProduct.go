@@ -5,6 +5,7 @@ import (
 	"image"
 	"image/color"
 	"log"
+	"github.com/fpawel/eccco73/view/product/imgchart"
 )
 
 func (x *AppMainWindow) invalidateChart() {
@@ -30,7 +31,7 @@ func (x *AppMainWindow) invalidateChart() {
 		}
 		x.setChartBitmap(img)
 	} else {
-		img, err := x.clickedProduct.DrawChart(width, height)
+		img, err := imgchart.New(x.clickedProduct, width, height)
 		if err != nil {
 			log.Fatal(err)
 		}

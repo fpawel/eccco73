@@ -1,4 +1,4 @@
-package eccco73
+package imgchart
 
 import (
 	"github.com/wcharczuk/go-chart"
@@ -6,9 +6,10 @@ import (
 	"image"
 	"fmt"
 	"github.com/wcharczuk/go-chart/drawing"
+	"github.com/fpawel/eccco73"
 )
 
-func (x Product) DrawChart(width,height int) (image.Image,error) {
+func New(x eccco73.Product, width,height int) (image.Image,error) {
 	flash := x.Flash()
 
 	seriesFon := chart.ContinuousSeries{
