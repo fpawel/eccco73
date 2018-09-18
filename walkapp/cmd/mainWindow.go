@@ -4,7 +4,7 @@ import (
 	"github.com/lxn/walk"
 
 	"fmt"
-	"github.com/fpawel/eccco73"
+	"github.com/fpawel/eccco73/internal/eccco73"
 	"log"
 )
 

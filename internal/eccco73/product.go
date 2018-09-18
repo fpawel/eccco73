@@ -3,7 +3,7 @@ package eccco73
 import (
 	"math"
 	"database/sql"
-	"github.com/fpawel/eccco73/flash"
+	"github.com/fpawel/eccco73/internal/flash"
 )
 
 type Product2 struct {

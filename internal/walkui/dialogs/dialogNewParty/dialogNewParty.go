@@ -2,7 +2,7 @@ package dialogNewParty
 
 import (
 	"fmt"
-	"github.com/fpawel/eccco73"
+	"github.com/fpawel/eccco73/internal/eccco73"
 	"github.com/lxn/walk"
 	. "github.com/lxn/walk/declarative"
 	"github.com/lxn/win"

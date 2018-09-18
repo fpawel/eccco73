@@ -1,16 +1,16 @@
 package main
 
 import (
-	"github.com/fpawel/eccco73/data/sqlite"
+	"github.com/fpawel/eccco73/internal/data/sqlite"
 	"github.com/lxn/walk"
 
 	"database/sql"
 	"fmt"
-	"github.com/fpawel/eccco73"
-	"github.com/fpawel/eccco73/walkui/dialogs/dialogEditParty"
-	"github.com/fpawel/eccco73/walkui/dialogs/dialogEditProduct"
-	"github.com/fpawel/eccco73/walkui/dialogs/dialogFindProduct"
-	"github.com/fpawel/eccco73/walkui/dialogs/dialogNewParty"
+	"github.com/fpawel/eccco73/internal/eccco73"
+	"github.com/fpawel/eccco73/internal/walkui/dialogs/dialogEditParty"
+	"github.com/fpawel/eccco73/internal/walkui/dialogs/dialogEditProduct"
+	"github.com/fpawel/eccco73/internal/walkui/dialogs/dialogFindProduct"
+	"github.com/fpawel/eccco73/internal/walkui/dialogs/dialogNewParty"
 	"github.com/lxn/win"
 	"log"
 	"time"

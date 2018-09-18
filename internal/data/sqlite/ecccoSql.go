@@ -1,7 +1,7 @@
 package sqlite
 
 import (
-	"github.com/fpawel/eccco73"
+	"github.com/fpawel/eccco73/internal/eccco73"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
 	"log"

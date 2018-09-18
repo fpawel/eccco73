@@ -5,7 +5,7 @@ import (
 	"image"
 	"image/color"
 	"log"
-	"github.com/fpawel/eccco73/view/product/imgchart"
+	"github.com/fpawel/eccco73/internal/view/product/imgchart"
 )
 
 func (x *AppMainWindow) invalidateChart() {

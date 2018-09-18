@@ -3,7 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/fpawel/eccco73"
+	"github.com/fpawel/eccco73/internal/eccco73"
 	"github.com/lxn/walk"
 	"strconv"
 )

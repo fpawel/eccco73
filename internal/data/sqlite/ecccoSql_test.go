@@ -5,7 +5,7 @@ import (
 	"github.com/jmoiron/sqlx"
 
 	"testing"
-	"github.com/fpawel/eccco73/data/old"
+	"github.com/fpawel/eccco73/internal/data/old"
 	"github.com/fpawel/goanalit/eccco73"
 	"strings"
 )

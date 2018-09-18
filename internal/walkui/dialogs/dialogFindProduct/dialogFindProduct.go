@@ -1,13 +1,13 @@
 package dialogFindProduct
 
 import (
-	"log"
-	"github.com/lxn/win"
+	"fmt"
+	"github.com/fpawel/eccco73/internal/eccco73"
 	"github.com/lxn/walk"
 	. "github.com/lxn/walk/declarative"
-	"github.com/fpawel/eccco73"
+	"github.com/lxn/win"
+	"log"
 	"time"
-	"fmt"
 )
 
 type FinderProductsBySerial interface {

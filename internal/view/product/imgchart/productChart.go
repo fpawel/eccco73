@@ -6,7 +6,7 @@ import (
 	"image"
 	"fmt"
 	"github.com/wcharczuk/go-chart/drawing"
-	"github.com/fpawel/eccco73"
+	"github.com/fpawel/eccco73/internal/eccco73"
 )
 
 func New(x eccco73.Product, width,height int) (image.Image,error) {
