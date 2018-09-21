@@ -2,8 +2,8 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/fpawel/guartutils/comport"
-	"github.com/fpawel/guartutils/fetch"
+	"github.com/fpawel/goutils/serial/comport"
+	"github.com/fpawel/goutils/serial/fetch"
 	"github.com/tarm/serial"
 	"io/ioutil"
 	"time"

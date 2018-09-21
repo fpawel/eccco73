@@ -1,11 +1,11 @@
 package flash
 
 import (
-	"time"
 	"encoding/binary"
-	"github.com/fpawel/guartutils/modbus"
 	"fmt"
+	"github.com/fpawel/goutils/serial/modbus"
 	"math"
+	"time"
 )
 
 type Bytes []byte
