@@ -28,7 +28,7 @@ func NewAppConfig() AppConfig {
 	r := AppConfig{
 		PortProducts: comport.Config{
 			Serial: portConfig9600,
-			Fetch: fetch.Config{
+			Fetch: uart.Config{
 				MaxAttemptsRead: 1,
 				ReadTimeout:     time.Second,
 				ReadByteTimeout: 50 * time.Millisecond,
